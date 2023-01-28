@@ -3,7 +3,7 @@
   become: true
   tasks:
   - name: Stop Tomcat
-    service: name=tomcat state=stopped
+    service: name=tomcatstop state=stopped
   - name: Check that war file exist
     stat:
       path: /usr/share/tomcat/webapps/hello-world-servlet-example.war
@@ -28,4 +28,4 @@
        url: http://15.152.154.0:8081/nexus/service/rest/v1/search/assets/download?sort=version&repository=maven-releases&maven.groupId=com.geekcap.vmturbo&maven.artifactId=hello-world-servlet-example&maven.baseVersion=artifactversion&maven.extension=war&v=LATEST
        dest: /usr/share/tomcat/webapps/hello-world-servlet-example.war
   - name: Start Tomcat
-    service: name=tomcat state=started
+    service: name=tomcatstart state=started
