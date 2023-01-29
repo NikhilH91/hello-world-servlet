@@ -25,7 +25,7 @@
     when: stat_result.stat.exists == True
   - name: Deploy War File
     get_url:
-       url: http://172.31.40.153:8081/#browse/browse:maven-releases:com%2Fgeekcap%2Fvmturbo%2Fhello-world-servlet-example%2F18%2Fhello-world-servlet-example-LATEST.war
+       url: http://13.208.201.136:8081/#browse/browse:maven-releases:com%2Fgeekcap%2Fvmturbo%2Fhello-world-servlet-example%2F18%2Fhello-world-servlet-example-LATEST.war
        dest: /root/apache-tomcat-9.0.70/webapps
   - name: Start Tomcat
     service: name=tomcatstart state=started
